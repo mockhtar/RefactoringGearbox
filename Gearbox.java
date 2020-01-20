@@ -9,31 +9,31 @@ public class Gearbox {
 	private final static int premierVitesse = 1;
 	
 
-    private int s = 0;
-    private int e = 0;
+	private int vitesse = 0;
+    private int regime = 0;
 
-    public void doit(int i) {
-        if (s < pointMort) {
+    public void doit(int regimeactuelle) {
+        if (vitesse < pointMort) {
             // do nothing!
-            e = i;
+        	regime = regimeactuelle;
         }
         else {
         	
-            if (s > pointMort) {
-                if (i > decalageSuperieur) {
-                    s++;
-                } else if (i < decalageInferieur) {
-                    s--;
+            if (vitesse > pointMort) {
+                if (regimeactuelle > decalageSuperieur) {
+                	vitesse++;
+                } else if (regimeactuelle < decalageInferieur) {
+                	vitesse--;
                 }
             }
             
-            if (s > nombreVitesseMax) {
-                s--;
+            if (vitesse > nombreVitesseMax) {
+            	vitesse--;
             } 
-            else if (s < premierVitesse) {
-                s++;
+            else if (vitesse < premierVitesse) {
+            	vitesse++;
             }
-            e = i;
+            regime = regimeactuelle;
         }
     }
 
