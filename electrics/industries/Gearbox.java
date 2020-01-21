@@ -47,7 +47,10 @@ public class Gearbox {
 	*/
 	public boolean vitesseADecrementer() {
 		return ((vitesse > pointMort && regime < decalageInferieur) || vitesse > nombreVitesseMax);
-	} }
+	} 
+	
+	public static void main(String[] args) {
+		System.out.println("Kata Gearbox excécutable jar est lancé avec succès - Done");
 	}
 
 }
